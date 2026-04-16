@@ -25,7 +25,7 @@ bun dev
 - 编辑`drizzle.config.ts`文件，配置Drizzle
 - 编辑`store/schema.ts`文件，定义表的结构，运行以下命令推送更改：
 ```bash
-bunx drizzle-kit push
+bun db:push
 ```
 
 ### API接口

@@ -20,7 +20,11 @@
     ],
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "types": ["bun"],
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
   },
   "include": [
     "next-env.d.ts",

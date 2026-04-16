@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js + shadcn/ui + Hono + Drizzle Starter
 
-## Getting Started
+## 快速开始
+### 1. 环境依赖
+- [Bun](https://bun.com/docs/installation)
 
-First, run the development server:
-
+### 2. 安装依赖
+使用Bun安装依赖：
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+bun install
+```
+
+### 3. 启动开发服务器
+运行以下命令启动开发服务器：
+```bash
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+启动成功后，您可以在浏览器中访问 http://localhost:3000 查看结果
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 项目配置
+### 连接数据库
+连接数据库使用Drizzle ORM，默认使用PostgreSQL数据库
+- 编辑`.env`文件，设置连接变量`DATABASE_URL`
+- 编辑`drizzle.config.ts`文件，配置Drizzle
+- 编辑`store/schema.ts`文件，定义表的结构，运行以下命令推送更改：
+```bash
+bunx drizzle-kit push
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### API接口
+用Hono接管Next.js的API接口
+- 编辑`server`文件夹
+- 入口文件在`app/api/`文件夹下，默认导出GET和POST方法

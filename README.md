@@ -1,34 +1,37 @@
 # Next.js + shadcn/ui + Hono + Drizzle Starter
+[中文](README_CN.md) | English
 
-## 快速开始
-### 1. 环境依赖
+## Quick Start
+### 1. Prerequisites
 - [Bun](https://bun.com/docs/installation)
 
-### 2. 安装依赖
-使用Bun安装依赖：
+### 2. Install Dependencies
+Install dependencies using Bun:
 ```bash
 bun install
 ```
 
-### 3. 启动开发服务器
-运行以下命令启动开发服务器：
+### 3. Start the Development Server
+Run the following command to start the development server:
 ```bash
 bun dev
 ```
 
-启动成功后，您可以在浏览器中访问 http://localhost:3000 查看结果
+Once started, you can visit http://localhost:3000 in your browser to view the result.
 
-## 项目配置
-### 连接数据库
-连接数据库使用Drizzle ORM，默认使用PostgreSQL数据库
-- 编辑`.env`文件，设置连接变量`DATABASE_URL`
-- 编辑`drizzle.config.ts`文件，配置Drizzle
-- 编辑`store/schema.ts`文件，定义表的结构，运行以下命令推送更改：
+---
+
+## Project Configuration
+### Database Connection
+This project uses **Drizzle ORM** for database management, with **PostgreSQL** as the default database.
+* Edit the `.env` file to set your `DATABASE_URL` connection string.
+* Edit `drizzle.config.ts` to configure Drizzle settings.
+* Edit `store/schema.ts` to define your table structures, then run the following command to push changes to the database:
 ```bash
 bun db:push
 ```
 
-### API接口
-用Hono接管Next.js的API接口
-- 编辑`server`文件夹
-- 入口文件在`app/api/`文件夹下，默认导出GET和POST方法
+### API Endpoints
+**Hono** is used to handle Next.js API routes.
+* Modify the logic within the `server` folder.
+* The entry point is located in the `app/api/[[...route]]` folder, which exports the GET and POST methods by default.
